@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>楽曲操作システム★更新入力</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
+    h2 {
+        text-align: center;
+        color: #333;
+        margin-top: 50px;
+    }
+    form {
+        width: 60%;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    form label {
+        display: inline-block;
+        width: 100px;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+    form input[type="text"] {
+        width: calc(100% - 120px);
+        padding: 10px;
+        margin-bottom: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    form input[type="submit"] {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    form input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+    <h2>楽曲操作システム★更新入力</h2>
+    <form th:action="@{/update-complete}" method="post">
+        <input type="hidden" name="id" th:value="${musicForm.id}">
+        <label>曲名: </label><input type="text" name="name" th:value="${musicForm.name}"><br />
+        <label>歌手名: </label><input type="text" name="singer" th:value="${musicForm.singer}"><br />
+        <input type="submit" value="更新確認">
+    </form>
+</body>
+</html>

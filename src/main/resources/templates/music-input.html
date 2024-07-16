@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>楽曲操作システム★登録</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
+    h2 {
+        text-align: center;
+        color: #333;
+        margin-top: 50px;
+    }
+    form {
+        width: 80%;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    form input[type="text"], form input[type="submit"] {
+        width: calc(100% - 22px); /* 10pxのパディングと1pxのボーダー分引く */
+        padding: 10px;
+        margin: 10px 0;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box; /* 内側のパディングやボーダーを含めた幅指定 */
+    }
+    form input[type="submit"] {
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+    }
+    form input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+    <h2>楽曲操作システム★登録</h2>
+    <form th:action="@{/insert}" method="post">
+        <input type="text" name="name" placeholder="曲名を入力してください"><br />
+        <input type="text" name="singer" placeholder="歌手名を入力してください"><br /> 
+        <input type="submit" value="登録確認">
+    </form>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>楽曲操作システム</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
+    h1 {
+        text-align: center;
+        color: #333;
+        margin-top: 50px;
+    }
+    form {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+    input[type="submit"] {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin: 0 10px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+    <h1>楽曲操作システム</h1>
+    <form th:action="@{/menu}" method="POST">
+        <input type="submit" value="一覧" name="view">
+        <input type="submit" value="登録" name="insert">
+        <input type="submit" value="更新" name="update">
+        <input type="submit" value="削除" name="delete">
+    </form>
+</body>
+</html>
